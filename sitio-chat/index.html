@@ -94,10 +94,12 @@
     <figure><img src="ofertas/oferta-05.jpg" alt="Ofertas de noviembre: Desodorantes" loading="lazy"><figcaption>Desodorantes</figcaption></figure>
     <figure><img src="ofertas/oferta-06.jpg" alt="Ofertas de noviembre: Un básico para tu día" loading="lazy"><figcaption>Un básico para tu día</figcaption></figure>
     <figure><img src="ofertas/oferta-07.jpg" alt="Ofertas de noviembre: Jabones" loading="lazy"><figcaption>Jabones</figcaption></figure>
+    <figure><img src="ofertas/oferta-08.jpg" alt="Ofertas de noviembre: ICOM, marca propia" loading="lazy"><figcaption>ICOM, marca propia</figcaption></figure>
     <figure><img src="ofertas/oferta-09.jpg" alt="Ofertas de noviembre: Cuidado del cabello" loading="lazy"><figcaption>Cuidado del cabello</figcaption></figure>
     <figure><img src="ofertas/oferta-11.jpg" alt="Ofertas de noviembre: Higiene oral" loading="lazy"><figcaption>Higiene oral</figcaption></figure>
     <figure><img src="ofertas/oferta-12.jpg" alt="Ofertas de noviembre: Higiene oral y cuidado del bebé" loading="lazy"><figcaption>Higiene oral y cuidado del bebé</figcaption></figure>
     <figure><img src="ofertas/oferta-13.jpg" alt="Ofertas de noviembre: Cuidado del bebé" loading="lazy"><figcaption>Cuidado del bebé</figcaption></figure>
+    <figure><img src="ofertas/oferta-14.jpg" alt="Ofertas de noviembre: Salud y alivio" loading="lazy"><figcaption>Salud y alivio</figcaption></figure>
     <figure><img src="ofertas/oferta-15.jpg" alt="Ofertas de noviembre: Protección y bienestar" loading="lazy"><figcaption>Protección y bienestar</figcaption></figure>
     <figure><img src="ofertas/oferta-16.jpg" alt="Ofertas de noviembre: Sorteo: más de 1.250 premios" loading="lazy"><figcaption>Sorteo: más de 1.250 premios<span class="of-nota">Para participar, registra tu compra en el WhatsApp 320 374 2241. Para pedir a domicilio, escríbenos al 315 946 6807.</span></figcaption></figure>
     </div>
@@ -183,11 +185,9 @@
 </script>
 
 <script>
-  // Gran oferta de noviembre: visible del 2 al 30 de noviembre de 2026 (hora de Colombia). Con ?ofertas=1 se ve antes.
+  // Gran oferta de noviembre: visible desde el 30 de octubre (Christian pidió publicarla de una vez; la vigencia de las ofertas es del 2 al 30 de noviembre).
   (function () {
-    var caja = document.getElementById('ofertas'), ahora = Date.now();
-    var activa = ahora >= Date.parse('2026-11-02T00:00:00-05:00') && ahora < Date.parse('2026-12-01T00:00:00-05:00');
-    if (activa || new URLSearchParams(location.search).get('ofertas') === '1') caja.hidden = false;
+    document.getElementById('ofertas').hidden = false;
     var visor = document.getElementById('visor'), grande = visor.querySelector('img');
     document.getElementById('of-carrusel').addEventListener('click', function (e) {
       if (e.target.tagName !== 'IMG') return;
