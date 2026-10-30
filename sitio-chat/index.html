@@ -111,6 +111,14 @@
 </div>
 
 <script>
+  // Anuncio de remarketing (?c=premios): el botón lleva el mensaje del sorteo de premios.
+  if (new URLSearchParams(location.search).get('c') === 'premios') {
+    document.getElementById('whatsapp').href = 'https://wa.me/573159466807?text=' +
+      encodeURIComponent('Hola, quiero hacer un pedido a domicilio y participar en el sorteo de los premios.');
+  }
+</script>
+
+<script>
   // Conversión "Chat Web Iniciado": se registra al tocar el botón y luego abre WhatsApp.
   document.getElementById('whatsapp').addEventListener('click', function (e) {
     var url = this.href, abierto = false;
