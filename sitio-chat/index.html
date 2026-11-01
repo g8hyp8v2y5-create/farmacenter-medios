@@ -16,63 +16,92 @@
   gtag('js', new Date());
   gtag('config', 'AW-399177990');
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root { --azul:#023197; --naranja:#f88a35; --verde:#25d366; --texto:#1d2433; --suave:#5b6478; --fondo:#f4f6fb; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--fondo); color:var(--texto); line-height:1.45; }
-  header { background:var(--azul); color:#fff; padding:14px 16px; text-align:center; font-weight:700; font-size:18px; letter-spacing:.3px; }
-  header span { color:var(--naranja); }
-  main { max-width:480px; margin:0 auto; padding:20px 16px 110px; }
-  .tarjeta { background:#fff; border-radius:16px; padding:20px; box-shadow:0 2px 10px rgba(2,49,151,.08); margin-bottom:16px; }
-  .asesora { display:flex; gap:14px; align-items:center; }
-  .asesora img { width:72px; height:72px; border-radius:50%; object-fit:cover; border:3px solid var(--naranja); flex-shrink:0; }
-  h1 { font-size:22px; margin:0 0 4px; color:var(--azul); }
-  .sub { margin:0; color:var(--suave); font-size:15px; }
-  .pasos { margin:0; padding-left:22px; }
-  .pasos li { margin:6px 0; }
-  .boton { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; background:var(--verde); color:#fff; text-decoration:none; font-weight:700; font-size:19px; padding:16px; border-radius:14px; border:0; cursor:pointer; }
-  .boton svg { width:26px; height:26px; fill:#fff; }
-  .fijo { position:fixed; left:0; right:0; bottom:0; padding:12px 16px calc(12px + env(safe-area-inset-bottom)); background:rgba(244,246,251,.96); box-shadow:0 -2px 10px rgba(0,0,0,.06); }
-  .fijo .boton { max-width:448px; margin:0 auto; }
-  h2 { font-size:17px; margin:0 0 10px; color:var(--azul); }
-  .datos p { margin:6px 0; }
-  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
-  .chips span { background:#eef2fb; color:var(--azul); border-radius:999px; padding:5px 12px; font-size:14px; font-weight:600; }
-  .foto { padding:0; overflow:hidden; }
-  .foto img { display:block; width:100%; height:auto; }
-  .foto .pie { padding:14px 20px 18px; }
-  .boton2 { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:10px; background:#fff; color:var(--azul); border:2px solid var(--azul); text-decoration:none; font-weight:700; font-size:17px; padding:12px; border-radius:12px; }
-  .estrellas { font-size:28px; color:#fbbc04; letter-spacing:2px; }
-  .nota { font-size:30px; font-weight:800; color:var(--texto); margin-right:8px; }
-  .resenas[hidden], #calificacion[hidden] { display:none; }
-  footer { text-align:center; color:var(--suave); font-size:13px; padding:8px 16px 0; }
-  .ofertas { background:linear-gradient(160deg,#023197 0%,#0a49c9 100%); color:#fff; border-radius:20px; padding:20px 0 20px; margin-bottom:16px; box-shadow:0 6px 18px rgba(2,49,151,.25); overflow:hidden; }
-  .ofertas[hidden] { display:none; }
-  .of-cab { padding:0 20px; text-align:center; }
-  .of-sello { display:inline-block; background:var(--naranja); color:#fff; font-weight:800; font-size:13px; letter-spacing:.6px; text-transform:uppercase; padding:6px 14px; border-radius:999px; }
-  .ofertas h2 { color:#fff; font-size:30px; line-height:1.1; margin:12px 0 6px; }
-  .ofertas h2 b { color:#ffd23f; font-size:46px; }
-  .of-cab p { margin:0 0 4px; font-size:15px; color:#e4ebff; }
-  .of-cab p strong { color:#fff; }
-  .of-carrusel { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; align-items:flex-start; padding:16px 20px 8px; -webkit-overflow-scrolling:touch; }
-  .of-carrusel figure { flex:0 0 78%; max-width:340px; margin:0; scroll-snap-align:center; background:#fff; border-radius:14px; overflow:hidden; color:var(--texto); }
-  .of-carrusel img { display:block; width:100%; height:auto; cursor:zoom-in; }
-  .of-carrusel figcaption { padding:8px 12px 12px; font-weight:700; font-size:14px; color:var(--azul); }
-  .of-nota { display:block; font-weight:500; font-size:12px; color:var(--suave); margin-top:4px; }
-  .of-pista { text-align:center; margin:4px 0 12px; font-size:13px; color:#cfdcff; }
-  .ofertas .boton { width:auto; margin:0 20px; background:var(--naranja); }
-  .of-legal { margin:12px 20px 0; font-size:11px; color:#b9caf7; text-align:center; }
-  #visor { position:fixed; inset:0; background:rgba(0,10,40,.92); display:none; align-items:center; justify-content:center; z-index:50; padding:12px; }
-  #visor.abierto { display:flex; }
-  #visor img { max-width:100%; max-height:100%; border-radius:8px; }
-</style>
-</head>
+:root{--azul:#023197;--azul2:#0a49c9;--naranja:#f88a35;--verde:#25d366;--verde2:#128c4a;--texto:#1d2433;--suave:#5b6478;--fondo:#f1f4fb;--r:24px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.45;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(60% 40% at 90% 0%,rgba(248,138,53,.16),transparent 70%),radial-gradient(70% 50% at 0% 20%,rgba(10,73,201,.12),transparent 70%)}
+header{position:sticky;top:0;z-index:20;background:rgba(2,49,151,.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);color:#fff;padding:14px 16px;text-align:center;font-weight:800;font-size:18px;letter-spacing:.3px;box-shadow:0 4px 18px rgba(2,49,151,.25)}
+header span{color:var(--naranja)}
+main{max-width:480px;margin:0 auto;padding:20px 16px 120px}
+/* entrada al bajar */
+.rev{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .6s ease,transform .8s cubic-bezier(.34,1.56,.64,1);transition-delay:var(--d,0s)}
+.rev.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}*{animation:none!important}}
+.tarjeta{background:#fff;border-radius:var(--r);padding:22px;box-shadow:0 8px 28px rgba(2,49,151,.09);margin-bottom:18px;transition:transform .3s,box-shadow .3s}
+.tarjeta:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(2,49,151,.15)}
+.hero{background:linear-gradient(135deg,#fff 0%,#eef3ff 100%);border:1px solid rgba(2,49,151,.06);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(248,138,53,.35),transparent 70%);animation:flota 6s ease-in-out infinite}
+.asesora{display:flex;gap:16px;align-items:center;position:relative;z-index:1}
+.asesora img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:4px solid var(--naranja);flex-shrink:0;box-shadow:0 0 0 0 rgba(248,138,53,.5);animation:onda 2.4s infinite}
+h1{font-size:24px;line-height:1.15;margin:0 0 6px;color:var(--azul);font-weight:800}
+.sub{margin:0;color:var(--suave);font-size:15px}
+.pasos{margin:0;padding:0;list-style:none;counter-reset:p}
+.pasos li{counter-increment:p;position:relative;margin:12px 0;padding-left:46px;min-height:34px;display:flex;align-items:center}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--naranja),#ffb067);color:#fff;font-weight:800;display:grid;place-items:center;box-shadow:0 4px 10px rgba(248,138,53,.4)}
+/* botones */
+.boton{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,#2be074 0%,var(--verde) 45%,var(--verde2) 100%);color:#fff;text-decoration:none;font-weight:800;font-size:19px;padding:17px;border-radius:999px;border:0;cursor:pointer;box-shadow:0 8px 22px rgba(37,211,102,.55);transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s}
+.boton::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:brillo 3.6s infinite}
+.boton:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 12px 30px rgba(37,211,102,.7)}
+.boton:active{transform:scale(.97)}
+.boton svg{width:26px;height:26px;fill:#fff;flex-shrink:0}
+.fijo{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(241,244,251,.9) 55%,rgba(241,244,251,0));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.fijo .boton{max-width:448px;margin:0 auto;animation:latido 2.6s infinite}
+h2{font-size:18px;margin:0 0 12px;color:var(--azul);font-weight:800}
+.datos p{margin:8px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips span{background:#eef2fb;color:var(--azul);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;transition:transform .2s,background .2s,color .2s}
+.chips span:hover{transform:translateY(-2px);background:var(--azul);color:#fff}
+.foto{padding:0;overflow:hidden}
+.foto img{display:block;width:100%;height:auto;transition:transform .8s}
+.foto:hover img{transform:scale(1.04)}
+.foto .pie{padding:16px 22px 20px;position:relative;background:#fff}
+.boton2{box-shadow:0 4px 12px rgba(2,49,151,.12);display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;background:#fff;color:var(--azul);border:2px solid var(--azul);text-decoration:none;font-weight:800;font-size:17px;padding:13px;border-radius:999px;transition:background .25s,color .25s,transform .2s,box-shadow .2s}
+.boton2:hover{background:var(--azul);color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(2,49,151,.25)}
+.boton2:active{transform:scale(.97)}
+.estrellas{font-size:28px;color:#fbbc04;letter-spacing:2px}
+.nota{font-size:30px;font-weight:800;color:var(--texto);margin-right:8px}
+.resenas[hidden],#calificacion[hidden]{display:none}
+footer{text-align:center;color:var(--suave);font-size:13px;padding:8px 16px 0}
+/* ofertas */
+.ofertas{background:linear-gradient(160deg,#023197 0%,#0a49c9 55%,#0a3fb0 100%);background-size:200% 200%;animation:fondo 12s ease infinite;color:#fff;border-radius:28px;padding:24px 0;margin-bottom:18px;box-shadow:0 16px 38px rgba(2,49,151,.35);overflow:hidden;position:relative}
+.ofertas::before{content:"";position:absolute;left:-60px;bottom:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(248,138,53,.35),transparent 70%);animation:flota 7s ease-in-out infinite}
+.ofertas[hidden]{display:none}
+.of-cab{padding:0 20px;text-align:center;position:relative}
+.of-sello{display:inline-block;background:linear-gradient(135deg,var(--naranja),#ff6a1a);color:#fff;font-weight:800;font-size:13px;letter-spacing:.6px;text-transform:uppercase;padding:7px 16px;border-radius:999px;box-shadow:0 6px 16px rgba(248,138,53,.5);animation:latido 2.6s infinite}
+.ofertas h2{color:#fff;font-size:30px;line-height:1.1;margin:14px 0 8px}
+.ofertas h2 b{color:#ffd23f;font-size:50px;text-shadow:0 4px 18px rgba(255,210,63,.45)}
+.of-cab p{margin:0 0 4px;font-size:15px;color:#e4ebff}
+.of-cab p strong{color:#fff}
+.of-carrusel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;align-items:flex-start;padding:18px 20px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:relative}
+.of-carrusel::-webkit-scrollbar{display:none}
+.of-carrusel figure{flex:0 0 78%;max-width:340px;margin:0;scroll-snap-align:center;background:#fff;border-radius:18px;overflow:hidden;color:var(--texto);box-shadow:0 10px 24px rgba(0,10,60,.35);transition:transform .35s,box-shadow .35s}
+.of-carrusel figure:hover{transform:translateY(-4px) scale(1.02)}
+.of-carrusel img{display:block;width:100%;height:auto;cursor:zoom-in}
+.of-carrusel figcaption{padding:10px 14px 14px;font-weight:800;font-size:14px;color:var(--azul)}
+.of-nota{display:block;font-weight:500;font-size:12px;color:var(--suave);margin-top:4px}
+.of-pista{text-align:center;margin:4px 0 14px;font-size:13px;color:#cfdcff;animation:desliza 1.8s ease-in-out infinite}
+.ofertas .boton{width:auto;margin:0 20px;background:linear-gradient(135deg,#ff9a4d,var(--naranja) 50%,#ee6f12);box-shadow:0 10px 24px rgba(248,138,53,.5)}
+.of-legal{margin:14px 20px 0;font-size:11px;color:#b9caf7;text-align:center}
+#visor{position:fixed;inset:0;background:rgba(0,10,40,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:12px}
+#visor.abierto{display:flex;animation:entra .25s}
+#visor img{max-width:100%;max-height:100%;border-radius:10px}
+@keyframes brillo{0%,55%{left:-80%}100%{left:140%}}
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes onda{0%{box-shadow:0 0 0 0 rgba(248,138,53,.55)}70%,100%{box-shadow:0 0 0 16px rgba(248,138,53,0)}}
+@keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fondo{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes desliza{0%,100%{transform:translateX(0)}50%{transform:translateX(8px)}}
+@keyframes entra{from{opacity:0}to{opacity:1}}
+</style></head>
 <body>
 <header>Droguería <span>Farmacenter</span> · Ibagué</header>
 <main>
-  <section class="tarjeta">
+  <section class="tarjeta hero rev">
     <div class="asesora">
-      <img src="clara.jpg" alt="Luna, asesora de Droguería Farmacenter" width="72" height="72">
+      <img src="clara.jpg" alt="Luna, asesora de Droguería Farmacenter" width="84" height="84">
       <div>
         <h1>¡Hola! Soy Luna 👋</h1>
         <p class="sub">Escríbenos por WhatsApp y te damos el precio al momento.</p>
@@ -80,7 +109,7 @@
     </div>
   </section>
 
-  <section class="ofertas" id="ofertas" hidden>
+  <section class="ofertas rev" id="ofertas" hidden>
     <div class="of-cab">
       <span class="of-sello">Gran oferta de noviembre</span>
       <h2>Hasta <b>45 %</b> de descuento</h2>
@@ -111,7 +140,7 @@
     <p class="of-legal">Vigencia del 2 al 30 de noviembre de 2026 o hasta agotar existencias. Precios de venta sugerido al público (P.V.S.P.). Imágenes de referencia. Sujeto a disponibilidad. Aplican términos y condiciones: www.farmacenter.com.co/legales</p>
   </section>
 
-  <section class="tarjeta foto">
+  <section class="tarjeta foto rev">
     <img src="fachada.jpg" alt="Fachada de Droguería Farmacenter, Carrera 5 #17-10, Ibagué" width="960" height="722">
     <div class="pie">
       <h2>Visítanos en la Carrera 5 #17-10</h2>
@@ -119,7 +148,7 @@
     </div>
   </section>
 
-  <section class="tarjeta">
+  <section class="tarjeta rev">
     <h2>Pedir es fácil</h2>
     <ol class="pasos">
       <li>Toca el botón verde de WhatsApp.</li>
@@ -128,7 +157,7 @@
     </ol>
   </section>
 
-  <section class="tarjeta datos">
+  <section class="tarjeta datos rev">
     <h2>Estamos para ayudarte</h2>
     <p>🛵 Domicilios en Ibagué</p>
     <p>📍 Carrera 5 #17-10, Ibagué, Tolima</p>
@@ -137,15 +166,13 @@
     <div class="chips"><span>Nequi</span><span>Daviplata</span><span>Visa</span><span>Mastercard</span><span>PSE</span></div>
   </section>
 
-
-
-  <section class="tarjeta resenas" id="resenas" hidden>
+  <section class="tarjeta resenas rev" id="resenas" hidden>
     <h2>¿Ya nos compraste? Cuéntanos cómo te fue</h2>
     <div id="calificacion" hidden><span class="nota" id="nota"></span><span class="estrellas" id="estrellas"></span><p class="sub" id="total"></p></div>
     <a class="boton2" id="boton-resena" href="#" target="_blank" rel="noopener">⭐ Déjanos tu reseña en Google</a>
   </section>
 
-  <section class="tarjeta">
+  <section class="tarjeta rev">
     <h2>Lo que encuentras</h2>
     <p class="sub">Droguería con productos genéricos y de marca, cuidado personal, bebés, vitaminas y más.</p>
   </section>
@@ -214,6 +241,17 @@
         document.getElementById('total').textContent = d.total + ' opiniones en Google';
         document.getElementById('calificacion').hidden = false;
       }).catch(function () {});
+  })();
+</script>
+<script>
+  // Efecto de entrada al bajar (se activa al aparecer cada bloque en pantalla).
+  (function () {
+    var els = document.querySelectorAll('.rev');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('vis'); }); return; }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (e, i) { e.style.setProperty('--d', (i % 3) * 0.08 + 's'); io.observe(e); });
   })();
 </script>
 </body>
