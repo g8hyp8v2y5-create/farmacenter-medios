@@ -205,6 +205,17 @@ footer{text-align:center;color:var(--suave);font-size:13px;padding:8px 16px 0}
   (function () {
     var q = new URLSearchParams(location.search);
     var g = (q.get('utm_content') || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 20) || 'web';
+    // Origen de la publicación (?ref=): solo letras, números, _ y -, hasta 40; sin ref no se manda aviso.
+    var ref = (q.get('ref') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40);
+    if (ref) g = ref;
+    window.FC_REF = ref;
+    window.fcAviso = function (evento) {
+      if (!ref) return;
+      var u = 'https://whatsapp-saas.crospe.workers.dev/e/luna/' + evento + '?ref=' + encodeURIComponent(ref);
+      try { if (!(navigator.sendBeacon && navigator.sendBeacon(u))) fetch(u, { method: 'POST', keepalive: true, mode: 'no-cors' }); }
+      catch (e) { try { fetch(u, { keepalive: true, mode: 'no-cors' }); } catch (e2) {} }
+    };
+    window.fcAviso('visita');
     var base = 'https://wa.me/573159466807?text=';
     document.getElementById('whatsapp').href = base + encodeURIComponent('Hola, quiero cotizar un producto a domicilio (ref ad_' + g + ')');
     document.getElementById('of-wa').href = base + encodeURIComponent('Hola, quiero pedir las ofertas de noviembre a domicilio (ref ad_' + g + ')');
@@ -221,6 +232,7 @@ footer{text-align:center;color:var(--suave);font-size:13px;padding:8px 16px 0}
   document.querySelectorAll('.wa').forEach(function (boton) {
     boton.addEventListener('click', function (e) {
       var url = this.href, abierto = false;
+      if (window.fcAviso) window.fcAviso('clic_chat');
       function abrir() { if (!abierto) { abierto = true; window.location = url; } }
       if (typeof gtag !== 'function') return;
       e.preventDefault();
